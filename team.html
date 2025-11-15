@@ -19,10 +19,110 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./static/css/styles.css">
-    
     <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Navbar Styles */
+        nav.navbar {
+            background-color: #001F3F;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav.navbar a {
+            color: #F5F5F5!important;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+
+        nav.navbar a:hover {
+            color: #BFAF8C !important;
+        }
+
+        nav.navbar .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        nav.navbar .btn-book {
+            background-color: #BFAF8C;
+            color: #001F3F !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+
+        nav.navbar .btn-book:hover {
+            background-color: #A8997A;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Navbar Styles */
+        nav.navbar {
+            background-color: #001F3F;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav.navbar a {
+            color: #F5F5F5!important;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+
+        nav.navbar a:hover {
+            color: #BFAF8C !important;
+        }
+
+        nav.navbar .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        nav.navbar .btn-book {
+            background-color: #BFAF8C;
+            color: #001F3F !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+
+        nav.navbar .btn-book:hover {
+            background-color: #A8997A;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #001F3F;
+            color: #F5F5F5;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #BFAF8C;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        footer a:hover {
+            color: #A8997A;
+        }
+
         .team-card {
             background: white;
             border-radius: 16px;
@@ -169,93 +269,67 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="sleek-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <div class="sleek-navbar-content">
-                <a href="./index.html" class="sleek-brand">
-                    <img src="https://d375139ucebi94.cloudfront.net/region2/pl/287458/logo/de7ae51e87364d53a9c447127c28db-meo-barber-logo-c7b4219ef0414b8fa495703677c600-booksy.jpeg" alt="Meo Barber Logo" width="40" height="40" style="object-fit: contain; border-radius: 4px; margin-right: 12px;">
-                    <span data-i18n="nav.brand">Meo Barber</span>
-                </a>
-                <button class="sleek-navbar-toggle" id="navbar-toggle" aria-label="Toggle menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div class="sleek-nav-links">
-                    <a href="./index.html" data-i18n="nav.home">Strona Główna</a>
-                    <a href="./about.html" data-i18n="nav.about">O nas</a>
-                    <a href="./services.html" data-i18n="nav.services">Usługi</a>
-                    <a href="./team.html" data-i18n="nav.team">Zespół</a>
-                    <a href="./gallery.html" data-i18n="nav.gallery">Galeria</a>
-                    <a href="./contact.html" data-i18n="nav.contact">Kontakt</a>
-                    <a href="https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa?do=invite" target="_blank" rel="noopener" class="sleek-btn-book" data-i18n="nav.book">Zarezerwuj</a>
-                    <div class="sleek-language-selector">
-                        <button class="sleek-language-btn" aria-label="Select language">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                            </svg>
-                            <span id="current-lang">PL</span>
-                        </button>
-                        <div class="sleek-language-dropdown">
-                            <button data-lang="pl" class="active"><span data-i18n="lang.pl">Polski</span></button>
-                            <button data-lang="en"><span data-i18n="lang.en">English</span></button>
-                            <button data-lang="ru"><span data-i18n="lang.ru">Русский</span></button>
-                            <button data-lang="uk"><span data-i18n="lang.uk">Українська</span></button>
-                        </div>
-                    </div>
-                </div>
+            <a class="navbar-brand" href="./index.html">
+                <img src="https://d375139ucebi94.cloudfront.net/region2/pl/287458/logo/de7ae51e87364d53a9c447127c28db-meo-barber-logo-c7b4219ef0414b8fa495703677c600-booksy.jpeg" alt="Meo Barber Logo" width="40" height="40" style="object-fit: contain; border-radius: 4px; margin-right: 12px;">
+                <span>Meo Barber</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="./index.html">Strona Główna</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html">O nas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./services.html">Usługi</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./team.html">Zespół</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./gallery.html">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html">Kontakt</a></li>
+                    <li class="nav-item ms-3"><a class="btn btn-book" href="https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa?do=invite" target="_blank" rel="noopener">Zarezerwuj</a></li>
+                </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-dark text-light py-5 mt-5">
+    <section class="bg-dark text-light py-5" style="margin-top: 70px;">
         <div class="container text-center">
-            <h1 class="display-4 fw-bold mb-4" data-i18n="team.hero.title">Nasz Zespół</h1>
-            <p class="lead" data-i18n="team.hero.subtitle">Poznaj naszych utalentowanych barberów</p>
+            <h1 class="display-4 fw-bold mb-4">Nasz Zespół</h1>
+            <p class="lead">Poznaj naszych utalentowanych barberów</p>
         </div>
     </section>
 
     <!-- Team Section -->
     <section class="py-5">
         <div class="container">
-            <div class="row g-4 justify-content-center" id="team-grid">
-                <!-- Team members will be loaded here -->
-            </div>
+            <div class="row g-4 justify-content-center" id="team-grid"></div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="py-5 bg-light">
         <div class="container text-center">
-            <h2 class="mb-4" data-i18n="team.cta.title">Gotowy na Rezerwację?</h2>
-            <p class="lead mb-4" data-i18n="team.cta.text">Wybierz swojego ulubionego barbera i umów się na wizytę już dziś.</p>
-            <a href="https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa?do=invite" target="_blank" rel="noopener" class="btn btn-warning btn-lg px-5 py-3" data-i18n="team.cta.btn">Zarezerwuj Teraz</a>
+            <h2 class="mb-4">Gotowy na Rezerwację?</h2>
+            <p class="lead mb-4">Wybierz swojego ulubionego barbera i umów się na wizytę już dziś.</p>
+            <a href="https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa?do=invite" target="_blank" rel="noopener" class="btn btn-warning btn-lg px-5 py-3">Zarezerwuj Teraz</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="sleek-footer">
-        <div class="container">
-            <div class="sleek-footer-content">
-                <p data-i18n="footer.copyright">© 2025 Meo Barber. Wszelkie prawa zastrzeżone.</p>
-                <div class="sleek-footer-links">
-                    <a href="https://www.instagram.com/meo_barber/" target="_blank" rel="noopener" data-i18n="footer.instagram">Instagram</a>
-                    <a href="https://www.facebook.com/meobarber" target="_blank" rel="noopener" data-i18n="footer.facebook">Facebook</a>
-                    <a href="https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa?do=invite" target="_blank" rel="noopener" data-i18n="footer.booksy">Booksy</a>
-                </div>
+    <footer>
+        <div class="container text-center">
+            <p class="mb-3">© 2025 Meo Barber. Wszelkie prawa zastrzeżone.</p>
+            <div>
+                <a href="https://www.instagram.com/meo_barber/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.facebook.com/meobarber" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa?do=invite" target="_blank" rel="noopener">Booksy</a>
             </div>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    
-    <!-- Translation System -->
-    <script src="./static/js/translations.js"></script>
-    <script src="./static/js/main.js"></script>
 
     <!-- Team Page Script -->
     <script>
@@ -266,7 +340,7 @@
                     name: "Meo Michał",
                     role: "Owner & Master Barber",
                     image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/237008874cfc44fbba514b9039f6ed29.jpeg",
-                    descriptionKey: "team.meo.desc",
+                    description: "Założyciel Meo Barber z pasją do perfekcyjnych cięć i stylizacji.",
                     experience: "10+",
                     clients: "5000+",
                     rating: "5.0",
@@ -277,7 +351,7 @@
                     name: "Viktor",
                     role: "Senior Barber",
                     image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/c807229ced294d6c85ab8bf62cdcb4-meo-barber-viktor-30b02d9de49846e7a10a063c6dce12-booksy.jpeg",
-                    descriptionKey: "team.viktor.desc",
+                    description: "Mistrz klasycznych cięć i nowoczesnych stylów z wieloletnim doświadczeniem.",
                     experience: "8+",
                     clients: "3500+",
                     rating: "4.9",
@@ -288,7 +362,7 @@
                     name: "Louis",
                     role: "Barber",
                     image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/f4262c90c52b43ce87c05b2b22ec5493.jpeg",
-                    descriptionKey: "team.louis.desc",
+                    description: "Specjalista fade'ów i współczesnych trendów w barbierstwie.",
                     experience: "5+",
                     clients: "2000+",
                     rating: "4.9",
@@ -299,7 +373,7 @@
                     name: "Dawid",
                     role: "Barber",
                     image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/fc1aab3078964a798efb5ed2c977e282.jpeg",
-                    descriptionKey: "team.dawid.desc",
+                    description: "Ekspert w precyzyjnych cięciach i artystycznych stylizacjach.",
                     experience: "6+",
                     clients: "2500+",
                     rating: "4.8",
@@ -310,7 +384,7 @@
                     name: "Ling",
                     role: "Barber",
                     image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/27cbf029bf6b4d80a3cbfb50158bd4-meo-barber-ling-df364601917c4b8d85ffa2b9303700-booksy.jpeg",
-                    descriptionKey: "team.ling.desc",
+                    description: "Specjalizuje się w klasycznych stylach i pielęgnacji brody.",
                     experience: "7+",
                     clients: "3000+",
                     rating: "4.9",
@@ -332,26 +406,26 @@
                 col.innerHTML = `
                     <div class="team-card">
                         <div class="team-photo-wrapper">
-                            <img src="${member.image}" class="team-photo" alt="${member.name}" loading="lazy" 
+                            <img src="${member.image}" class="team-photo" alt="${member.name}" loading="eager" 
                                  onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&size=500&background=BFAF8C&color=001F3F&font-size=0.4';">
                             <div class="team-badge">${member.badge}</div>
                         </div>
                         <div class="team-body">
                             <h3 class="team-name">${member.name}</h3>
                             <p class="team-role">${member.role}</p>
-                            <p class="team-description" data-i18n="${member.descriptionKey}"></p>
+                            <p class="team-description">${member.description}</p>
                             <div class="team-stats">
                                 <div class="team-stat">
                                     <span class="team-stat-value">${member.experience}</span>
-                                    <span class="team-stat-label" data-i18n="team.stats.years">Lata</span>
+                                    <span class="team-stat-label">Lata</span>
                                 </div>
                                 <div class="team-stat">
                                     <span class="team-stat-value">${member.clients}</span>
-                                    <span class="team-stat-label" data-i18n="team.stats.clients">Klienci</span>
+                                    <span class="team-stat-label">Klienci</span>
                                 </div>
                                 <div class="team-stat">
                                     <span class="team-stat-value">${member.rating}</span>
-                                    <span class="team-stat-label" data-i18n="team.stats.rating">Ocena</span>
+                                    <span class="team-stat-label">Ocena</span>
                                 </div>
                             </div>
                             <a href="${member.booksy}" target="_blank" rel="noopener" class="btn-book-barber">
@@ -361,18 +435,13 @@
                                     <line x1="8" y1="2" x2="8" y2="6"></line>
                                     <line x1="3" y1="10" x2="21" y2="10"></line>
                                 </svg>
-                                <span data-i18n="team.bookWith">Zarezerwuj z</span> <span>${member.name}</span>
+                                <span>Zarezerwuj z ${member.name}</span>
                             </a>
                         </div>
                     </div>
                 `;
                 teamGrid.appendChild(col);
             });
-            
-            // Apply translations after rendering
-            if (window.TranslationManager) {
-                window.TranslationManager.applyTranslations();
-            }
             
             console.log('Team members rendered successfully');
         });
