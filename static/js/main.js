@@ -106,7 +106,7 @@
         
         setupMobileMenu() {
             const toggle = document.getElementById('navbar-toggle');
-            const menu = document.querySelector('.sleek-navbar-menu');
+            const menu = document.querySelector('.sleek-nav-links');
             
             if (!toggle || !menu) return;
             
@@ -375,10 +375,11 @@
     // Language Selector Handler
     // =====================================
     function setupLanguageSelector() {
-        const langToggle = document.getElementById('lang-toggle');
-        const langDropdown = document.getElementById('lang-dropdown');
+        // Try both old and new selectors
+        const langToggle = document.getElementById('lang-toggle') || document.querySelector('.sleek-language-btn');
+        const langDropdown = document.getElementById('lang-dropdown') || document.querySelector('.sleek-language-dropdown');
         const currentLangSpan = document.getElementById('current-lang');
-        const langOptions = document.querySelectorAll('.lang-option');
+        const langOptions = document.querySelectorAll('.lang-option, .sleek-language-dropdown button[data-lang]');
         
         if (!langToggle || !langDropdown) return;
         
