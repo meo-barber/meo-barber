@@ -176,7 +176,14 @@
     </style>
 
     <script>
-        (function() {
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initTeamPage);
+        } else {
+            initTeamPage();
+        }
+
+        function initTeamPage() {
             // Team data from Booksy - Individual team members
             const teamMembers = [
                 {
@@ -293,15 +300,17 @@
                 // Apply translations after rendering
                 if (window.TranslationManager) {
                     window.TranslationManager.applyTranslations();
+                } else {
+                    console.log('TranslationManager not available, team rendered without translations');
                 }
                 
                 console.log('Team members rendered successfully');
             }
 
-            // Execute immediately (for SPA loading)
+            // Execute rendering
             renderTeamMembers();
 
             // Expose globally for SPA router
-            window.teamInit = renderTeamMembers;
-        })();
+            window.teamInit = initTeamPage;
+        }
     </script>
