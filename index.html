@@ -65,7 +65,7 @@
 	<nav class="sleek-navbar">
 		<div class="container">
 			<div class="sleek-navbar-content">
-				<a href="./" class="sleek-brand" data-spa-nav>
+				<a href="#home" class="sleek-brand" data-spa-nav>
 					<img src="https://d375139ucebi94.cloudfront.net/region2/pl/287458/logo/de7ae51e87364d53a9c447127c28db-meo-barber-logo-c7b4219ef0414b8fa495703677c600-booksy.jpeg" alt="Meo Barber Logo" width="40" height="40" style="object-fit: contain; border-radius: 4px; margin-right: 12px;">
 					<span data-i18n="nav.brand">Meo Barber</span>
 				</a>
@@ -75,12 +75,12 @@
 					<span></span>
 				</button>
 				<div class="sleek-nav-links">
-					<a href="./" data-spa-nav data-i18n="nav.home">Strona Główna</a>
-					<a href="./about.html" data-spa-nav data-i18n="nav.about">O nas</a>
-					<a href="./services.html" data-spa-nav data-i18n="nav.services">Usługi</a>
-					<a href="./team.html" data-spa-nav data-i18n="nav.team">Zespół</a>
-					<a href="./gallery.html" data-spa-nav data-i18n="nav.gallery">Galeria</a>
-					<a href="./contact.html" data-spa-nav data-i18n="nav.contact">Kontakt</a>
+					<a href="#home" data-spa-nav data-i18n="nav.home">Strona Główna</a>
+					<a href="#about" data-spa-nav data-i18n="nav.about">O nas</a>
+					<a href="#services" data-spa-nav data-i18n="nav.services">Usługi</a>
+					<a href="#team" data-spa-nav data-i18n="nav.team">Zespół</a>
+					<a href="#gallery" data-spa-nav data-i18n="nav.gallery">Galeria</a>
+					<a href="#contact" data-spa-nav data-i18n="nav.contact">Kontakt</a>
 					<a href="https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa?do=invite" target="_blank" rel="noopener" class="sleek-book-btn" data-i18n="nav.book">Zarezerwuj</a>
 					<div class="sleek-language-selector">
 						<button class="sleek-language-btn" aria-label="Select language">
@@ -167,6 +167,7 @@
 			// Page content templates
 			const pages = {
 				'': 'index',
+				'home': 'index',
 				'index': 'index',
 				'about': 'about',
 				'services': 'services',
@@ -177,6 +178,7 @@
 			
 			// Get base path for GitHub Pages
 			const basePath = window.location.pathname.includes('/meo-barber/') ? '/meo-barber/' : '/';
+			const isGitHubPages = window.location.hostname.includes('github.io');
 			
 			// Load page content
 			async function loadPage(pageName) {
@@ -189,7 +191,10 @@
 				mainContent.innerHTML = '<div class="container py-5 text-center"><div class="spinner-border text-warning" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 				
 				try {
-					const response = await fetch(`./pages/${page}.html`);
+					// Construct the correct path for GitHub Pages
+					const pagePath = isGitHubPages ? `${basePath}pages/${page}.html` : `./pages/${page}.html`;
+					const response = await fetch(pagePath);
+					
 					if (response.ok) {
 						const html = await response.text();
 						mainContent.innerHTML = html;
@@ -211,7 +216,7 @@
 					}
 				} catch (error) {
 					console.error('Error loading page:', error);
-					mainContent.innerHTML = '<div class="container py-5"><h1>Page not found</h1><p><a href="./">Return home</a></p></div>';
+					mainContent.innerHTML = '<div class="container py-5"><h1>Page not found</h1><p><a href="' + basePath + '">Return home</a></p></div>';
 				}
 			}
 			
@@ -221,25 +226,32 @@
 				if (link && link.href) {
 					e.preventDefault();
 					const url = new URL(link.href);
-					const page = url.pathname.replace(basePath, '').replace('.html', '').replace(/\/$/, '');
 					
-					// Update URL without reload
-					history.pushState({ page: page }, '', link.href);
+					// Extract page from hash
+					let page = '';
+					if (url.hash) {
+						page = url.hash.substring(1); // Remove #
+					} else {
+						page = url.pathname.replace(basePath, '').replace('.html', '').replace(/\/$/, '');
+					}
+					
+					// Update URL with hash
+					window.location.hash = page || 'home';
 					loadPage(page);
 				}
 			});
 			
-			// Handle browser back/forward
-			window.addEventListener('popstate', function(e) {
-				const page = e.state?.page || '';
+			// Handle hash changes
+			window.addEventListener('hashchange', function() {
+				const page = window.location.hash.substring(1) || 'home';
 				loadPage(page);
 			});
 			
 			// Load initial page
 			document.addEventListener('DOMContentLoaded', function() {
-				const initialPage = sessionStorage.getItem('initialPage') || '';
+				const page = window.location.hash.substring(1) || sessionStorage.getItem('initialPage') || 'home';
 				sessionStorage.removeItem('initialPage');
-				loadPage(initialPage);
+				loadPage(page);
 			});
 		})();
 	</script>
