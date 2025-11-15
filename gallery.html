@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Meo Barber</title>
+    <meta name="description" content="Zobacz nasze portfolio premium strzyżeń, pielęgnacji brody i transformacji w Meo Barber.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 31, 63, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: #F5F5F5;
+            font-weight: bold;
+        }
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #F5F5F5;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" data-spa-nav>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 3L8 5L6 7L4 5L6 3Z" fill="#BFAF8C"/>
+                    <path d="M18 17L20 19L18 21L16 19L18 17Z" fill="#BFAF8C"/>
+                    <path d="M14 7L10 11" stroke="#BFAF8C" stroke-width="2"/>
+                    <path d="M10 7L14 11" stroke="#BFAF8C" stroke-width="2"/>
+                </svg>
+                <span data-i18n="nav.brand">Meo Barber</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html" data-spa-nav data-i18n="nav.home">Strona Główna</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-spa-nav data-i18n="nav.about">O nas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html" data-spa-nav data-i18n="nav.services">Usługi</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="gallery.html" data-spa-nav data-i18n="nav.gallery">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html" data-spa-nav data-i18n="nav.contact">Kontakt</a></li>
+                </ul>
+                <select id="language-select" class="form-select" style="width: auto; background: rgba(255,255,255,0.1); color: #F5F5F5; border: 1px solid #BFAF8C;">
+                    <option value="pl" data-i18n="lang.pl">Polski</option>
+                    <option value="en" data-i18n="lang.en">English</option>
+                    <option value="ru" data-i18n="lang.ru">Русский</option>
+                    <option value="uk" data-i18n="lang.uk">Українська</option>
+                </select>
+                <a href="contact.html" class="btn btn-outline-warning ms-2" data-spa-nav data-i18n="nav.book">Zarezerwuj</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="spa-main">
+        <!-- Hero Section -->
+        <section class="bg-dark text-light py-5 mt-5">
+            <div class="container text-center">
+                <h1 class="display-4 fw-bold mb-4" data-i18n="gallery.hero.title">Nasza Galeria</h1>
+                <p class="lead" data-i18n="gallery.hero.subtitle">Odkryj nasze portfolio premium strzyżeń i transformacji.</p>
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-3" id="gallery-grid">
+                    <!-- Images will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <span class="close">&times;</span>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 Meo Barber. Wszelkie prawa zastrzeżone.</p>
+            <div class="mt-3">
+                <a href="https://www.instagram.com/meo_barber/" target="_blank" class="text-warning me-3">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61573950532764&ref=pl_edit_xav_ig_profile_page_web" target="_blank" class="text-warning me-3">Facebook</a>
+                <a href="https://booksy.com/pl-pl/dl/show-business/287458?utm_medium=c2c_referral" target="_blank" class="text-warning">Booksy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js" defer></script>
+    <script>
+    // Instagram placeholder fetch (replace with real API if available)
+    document.addEventListener('DOMContentLoaded', function() {
+        const galleryGrid = document.getElementById('gallery-grid');
+        // Example static images (replace with Instagram API fetch if available)
+        const images = [
+            {
+                url: 'https://d375139ucebi94.cloudfront.net/region2/pl/287458/service_photos/eaea94fcbc4b44029344e617335ae425.jpeg',
+                alt: 'Salon Meo Barber',
+                caption: 'Salon Meo Barber'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80',
+                alt: 'Strzyżenie męskie',
+                caption: 'Strzyżenie Męskie'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
+                alt: 'Pielęgnacja brody',
+                caption: 'Pielęgnacja Brody'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80',
+                alt: 'Golenie twarzy',
+                caption: 'Golenie Twarzy'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80',
+                alt: 'Strzyżenie dziecięce',
+                caption: 'Strzyżenie Dziecięce'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80',
+                alt: 'Kompletny pakiet',
+                caption: 'Kompletny Pakiet'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80',
+                alt: 'Przed i po',
+                caption: 'Transformacja'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1519400197470-5c1f256b5b51?auto=format&fit=crop&w=600&q=80',
+                alt: 'Barber przy pracy',
+                caption: 'Barber przy Pracy'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=600&q=80',
+                alt: 'Konsultacja z klientem',
+                caption: 'Konsultacja z Klientem'
+            }
+        ];
+        images.forEach(img => {
+            const col = document.createElement('div');
+            col.className = 'col-md-4 col-sm-6';
+            col.innerHTML = `
+                <div class="gallery-item">
+                    <img src="${img.url}" alt="${img.alt}" loading="lazy" width="600" height="400">
+                    <div class="overlay">${img.caption}</div>
+                </div>
+            `;
+            galleryGrid.appendChild(col);
+        });
+        // TODO: Replace above with Instagram API fetch if available
+    });
+    </script>
+</body>
+</html>
