@@ -127,18 +127,21 @@ window.translations = {
         "gallery.hero.subtitle": "Odkryj nasze portfolio premium strzyżeń i transformacji.",
         "gallery.loading": "Ładowanie...",
         
-        // Team Page
-        "team.hero.title": "Nasz Zespół",
-        "team.hero.subtitle": "Poznaj naszych utalentowanych barberów",
-        "team.cta.title": "Gotowy na Rezerwację?",
-        "team.cta.text": "Wybierz swojego ulubionego barbera i umów się na wizytę już dziś.",
-        "team.cta.btn": "Zarezerwuj Teraz",
-        "team.stats.years": "Lata",
-        "team.stats.clients": "Klienci",
-        "team.stats.rating": "Ocena",
-        "team.bookWith": "Zarezerwuj z",
-        
-        // Contact Page
+    // Team Page
+    "team.hero.title": "Nasz Zespół",
+    "team.hero.subtitle": "Poznaj naszych utalentowanych barberów",
+    "team.cta.title": "Gotowy na Rezerwację?",
+    "team.cta.text": "Wybierz swojego ulubionego barbera i umów się na wizytę już dziś.",
+    "team.cta.btn": "Zarezerwuj Teraz",
+    "team.stats.years": "Lata",
+    "team.stats.clients": "Klienci",
+    "team.stats.rating": "Ocena",
+    "team.bookWith": "Zarezerwuj z",
+    "team.meo.desc": "Założyciel Meo Barber z pasją do perfekcyjnych cięć i stylizacji.",
+    "team.viktor.desc": "Mistrz klasycznych cięć i nowoczesnych stylów z wieloletnim doświadczeniem.",
+    "team.louis.desc": "Specjalista fade'ów i współczesnych trendów w barbierstwie.",
+    "team.dawid.desc": "Ekspert w precyzyjnych cięciach i artystycznych stylizacjach.",
+    "team.ling.desc": "Specjalizuje się w klasycznych stylach i pielęgnacji brody.",        // Contact Page
         "contactTitle": "Kontakt i Rezerwacja",
         "contactSubtitle": "Skontaktuj się z nami lub umów wizytę już dziś.",
         "contactFormTitle": "Skontaktuj Się z Nami",
@@ -359,6 +362,11 @@ window.translations = {
         "team.stats.clients": "Clients",
         "team.stats.rating": "Rating",
         "team.bookWith": "Book with",
+        "team.meo.desc": "Founder of Meo Barber with a passion for perfect cuts and styling.",
+        "team.viktor.desc": "Master of classic cuts and modern styles with years of experience.",
+        "team.louis.desc": "Fade specialist and expert in contemporary barbering trends.",
+        "team.dawid.desc": "Expert in precision cuts and artistic styling.",
+        "team.ling.desc": "Specializes in classic styles and beard grooming.",
         
         // Social Media
         "social.follow": "Follow our latest work on social media:",
@@ -507,6 +515,11 @@ window.translations = {
         "team.stats.clients": "Клиентов",
         "team.stats.rating": "Рейтинг",
         "team.bookWith": "Забронировать с",
+        "team.meo.desc": "Основатель Meo Barber с страстью к идеальным стрижкам и укладкам.",
+        "team.viktor.desc": "Мастер классических стрижек и современных стилей с многолетним опытом.",
+        "team.louis.desc": "Специалист по fade и эксперт в современных трендах барберинга.",
+        "team.dawid.desc": "Эксперт в точных стрижках и художественной укладке.",
+        "team.ling.desc": "Специализируется на классических стилях и уходе за бородой.",
         
         // Social Media
         "social.follow": "Следите за нашими последними работами в социальных сетях:",
@@ -604,6 +617,11 @@ window.translations = {
         "team.stats.clients": "Клієнтів",
         "team.stats.rating": "Рейтинг",
         "team.bookWith": "Забронювати з",
+        "team.meo.desc": "Засновник Meo Barber з пристрастю до ідеальних стрижок і укладок.",
+        "team.viktor.desc": "Майстер класичних стрижок і сучасних стилів з багаторічним досвідом.",
+        "team.louis.desc": "Спеціаліст по fade і експерт у сучасних трендах барберингу.",
+        "team.dawid.desc": "Експерт у точних стрижках і художній укладці.",
+        "team.ling.desc": "Спеціалізується на класичних стилях і догляді за бородою.",
         
         // Social Media
         "social.follow": "Стежте за нашими останніми роботами в соціальних мережах:",
