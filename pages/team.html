@@ -177,68 +177,71 @@
 
     <script>
         (function() {
-            function loadTeamMembers() {
-                // Team data from Booksy - Individual team members
-                const teamMembers = [
-                    {
-                        name: "Meo Michał",
-                        role: "Owner & Master Barber",
-                        image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/237008874cfc44fbba514b9039f6ed29.jpeg",
-                        descriptionKey: "team.meo.desc",
-                        experience: "10+",
-                        clients: "5000+",
-                        rating: "5.0",
-                        booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/644282#ba_s=dl_1",
-                        badge: "Owner"
-                    },
-                    {
-                        name: "Viktor",
-                        role: "Senior Barber",
-                        image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/c807229ced294d6c85ab8bf62cdcb4-meo-barber-viktor-30b02d9de49846e7a10a063c6dce12-booksy.jpeg",
-                        descriptionKey: "team.viktor.desc",
-                        experience: "8+",
-                        clients: "3500+",
-                        rating: "4.9",
-                        booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/730475#ba_s=dl_1",
-                        badge: "Senior"
-                    },
-                    {
-                        name: "Louis",
-                        role: "Barber",
-                        image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/f4262c90c52b43ce87c05b2b22ec5493.jpeg",
-                        descriptionKey: "team.louis.desc",
-                        experience: "5+",
-                        clients: "2000+",
-                        rating: "4.9",
-                        booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/672646#ba_s=dl_1",
-                        badge: "Pro"
-                    },
-                    {
-                        name: "Dawid",
-                        role: "Barber",
-                        image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/fc1aab3078964a798efb5ed2c977e282.jpeg",
-                        descriptionKey: "team.dawid.desc",
-                        experience: "6+",
-                        clients: "2500+",
-                        rating: "4.8",
-                        booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/674560#ba_s=dl_1",
-                        badge: "Pro"
-                    },
-                    {
-                        name: "Ling",
-                        role: "Barber",
-                        image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/27cbf029bf6b4d80a3cbfb50158bd4-meo-barber-ling-df364601917c4b8d85ffa2b9303700-booksy.jpeg",
-                        descriptionKey: "team.ling.desc",
-                        experience: "7+",
-                        clients: "3000+",
-                        rating: "4.9",
-                        booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/651408#ba_s=dl_1",
-                        badge: "Pro"
-                    }
-                ];
+            // Team data from Booksy - Individual team members
+            const teamMembers = [
+                {
+                    name: "Meo Michał",
+                    role: "Owner & Master Barber",
+                    image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/237008874cfc44fbba514b9039f6ed29.jpeg",
+                    descriptionKey: "team.meo.desc",
+                    experience: "10+",
+                    clients: "5000+",
+                    rating: "5.0",
+                    booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/644282#ba_s=dl_1",
+                    badge: "Owner"
+                },
+                {
+                    name: "Viktor",
+                    role: "Senior Barber",
+                    image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/c807229ced294d6c85ab8bf62cdcb4-meo-barber-viktor-30b02d9de49846e7a10a063c6dce12-booksy.jpeg",
+                    descriptionKey: "team.viktor.desc",
+                    experience: "8+",
+                    clients: "3500+",
+                    rating: "4.9",
+                    booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/730475#ba_s=dl_1",
+                    badge: "Senior"
+                },
+                {
+                    name: "Louis",
+                    role: "Barber",
+                    image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/f4262c90c52b43ce87c05b2b22ec5493.jpeg",
+                    descriptionKey: "team.louis.desc",
+                    experience: "5+",
+                    clients: "2000+",
+                    rating: "4.9",
+                    booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/672646#ba_s=dl_1",
+                    badge: "Pro"
+                },
+                {
+                    name: "Dawid",
+                    role: "Barber",
+                    image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/fc1aab3078964a798efb5ed2c977e282.jpeg",
+                    descriptionKey: "team.dawid.desc",
+                    experience: "6+",
+                    clients: "2500+",
+                    rating: "4.8",
+                    booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/674560#ba_s=dl_1",
+                    badge: "Pro"
+                },
+                {
+                    name: "Ling",
+                    role: "Barber",
+                    image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/27cbf029bf6b4d80a3cbfb50158bd4-meo-barber-ling-df364601917c4b8d85ffa2b9303700-booksy.jpeg",
+                    descriptionKey: "team.ling.desc",
+                    experience: "7+",
+                    clients: "3000+",
+                    rating: "4.9",
+                    booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/651408#ba_s=dl_1",
+                    badge: "Pro"
+                }
+            ];
 
+            function renderTeamMembers() {
                 const teamGrid = document.getElementById('team-grid');
-                if (!teamGrid) return;
+                if (!teamGrid) {
+                    console.error('Team grid not found');
+                    return;
+                }
 
                 // Clear loading spinner
                 teamGrid.innerHTML = '';
@@ -291,16 +294,14 @@
                 if (window.TranslationManager) {
                     window.TranslationManager.applyTranslations();
                 }
+                
+                console.log('Team members rendered successfully');
             }
 
-            // Initialize on page load
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', loadTeamMembers);
-            } else {
-                loadTeamMembers();
-            }
+            // Execute immediately (for SPA loading)
+            renderTeamMembers();
 
             // Expose globally for SPA router
-            window.teamInit = loadTeamMembers;
+            window.teamInit = renderTeamMembers;
         })();
     </script>
