@@ -106,7 +106,7 @@
         
         setupMobileMenu() {
             const toggle = document.getElementById('navbar-toggle');
-            const menu = document.querySelector('.sleek-nav-links');
+            const menu = document.querySelector('.sleek-nav-links') || document.querySelector('.sleek-navbar-menu');
             
             if (!toggle || !menu) return;
             
@@ -116,6 +116,9 @@
                 toggle.classList.toggle('active');
                 menu.classList.toggle('active');
                 document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+                
+                // Update aria-expanded
+                toggle.setAttribute('aria-expanded', menu.classList.contains('active'));
             });
             
             // Close menu on link click
@@ -124,6 +127,7 @@
                     toggle.classList.remove('active');
                     menu.classList.remove('active');
                     document.body.style.overflow = '';
+                    toggle.setAttribute('aria-expanded', 'false');
                 });
             });
             
@@ -133,6 +137,7 @@
                     toggle.classList.remove('active');
                     menu.classList.remove('active');
                     document.body.style.overflow = '';
+                    toggle.setAttribute('aria-expanded', 'false');
                 }
             });
             
@@ -142,6 +147,7 @@
                     toggle.classList.remove('active');
                     menu.classList.remove('active');
                     document.body.style.overflow = '';
+                    toggle.setAttribute('aria-expanded', 'false');
                 }
             });
         },

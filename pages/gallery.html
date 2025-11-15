@@ -123,6 +123,48 @@
     <!-- Instagram Embed Script -->
     <script async src="//www.instagram.com/embed.js"></script>
     
+    <!-- Initialize Instagram embeds after page load -->
+    <script>
+        (function() {
+            // Function to load Instagram embeds
+            function initInstagramEmbeds() {
+                if (window.instgrm) {
+                    window.instgrm.Embeds.process();
+                } else {
+                    // Wait for Instagram embed script to load
+                    const checkInstagram = setInterval(function() {
+                        if (window.instgrm) {
+                            clearInterval(checkInstagram);
+                            window.instgrm.Embeds.process();
+                        }
+                    }, 100);
+                    
+                    // Stop checking after 5 seconds
+                    setTimeout(function() {
+                        clearInterval(checkInstagram);
+                    }, 5000);
+                }
+            }
+            
+            // Initialize on page load
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initInstagramEmbeds);
+            } else {
+                initInstagramEmbeds();
+            }
+            
+            // Re-initialize when page is shown (for SPA navigation)
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted || performance.navigation.type === 2) {
+                    setTimeout(initInstagramEmbeds, 100);
+                }
+            });
+            
+            // Expose globally for SPA router
+            window.galleryInit = initInstagramEmbeds;
+        })();
+    </script>
+    
     <style>
         .embed-container {
             position: relative;

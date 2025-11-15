@@ -147,16 +147,15 @@ img {
 }
 
 /* Desktop navigation - horizontal layout */
-.sleek-nav-links {
+.sleek-nav-links,
+.sleek-navbar-menu {
     display: flex;
     align-items: center;
     flex-direction: row;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 1.25rem;
-    flex: 1;
-    justify-content: flex-end;
+    gap: 1.5rem;
 }
 
 .sleek-navbar-links {
@@ -165,11 +164,18 @@ img {
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 2rem;
+    gap: 1.5rem;
+}
+
+.sleek-navbar-links li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .sleek-nav-links > a:not(.sleek-btn-book),
-.sleek-navbar-links a:not(.sleek-btn-book) {
+.sleek-navbar-links a:not(.sleek-btn-book),
+.sleek-navbar-links li > a:not(.sleek-btn-book) {
     color: var(--offwhite);
     font-family: 'Roboto', sans-serif;
     font-size: 0.95rem;
@@ -178,12 +184,13 @@ img {
     position: relative;
     transition: var(--transition);
     padding: 0.5rem 0;
-    display: block;
+    display: inline-block;
     white-space: nowrap;
 }
 
 .sleek-nav-links > a:not(.sleek-btn-book)::after,
-.sleek-navbar-links a:not(.sleek-btn-book)::after {
+.sleek-navbar-links a:not(.sleek-btn-book)::after,
+.sleek-navbar-links li > a:not(.sleek-btn-book)::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -198,14 +205,18 @@ img {
 .sleek-nav-links > a:not(.sleek-btn-book):hover::after,
 .sleek-nav-links > a:not(.sleek-btn-book).active::after,
 .sleek-navbar-links a:not(.sleek-btn-book):hover::after,
-.sleek-navbar-links a:not(.sleek-btn-book).active::after {
+.sleek-navbar-links a:not(.sleek-btn-book).active::after,
+.sleek-navbar-links li > a:not(.sleek-btn-book):hover::after,
+.sleek-navbar-links li > a:not(.sleek-btn-book).active::after {
     width: 100%;
 }
 
 .sleek-nav-links > a:not(.sleek-btn-book):hover,
 .sleek-nav-links > a:not(.sleek-btn-book).active,
 .sleek-navbar-links a:not(.sleek-btn-book):hover,
-.sleek-navbar-links a:not(.sleek-btn-book).active {
+.sleek-navbar-links a:not(.sleek-btn-book).active,
+.sleek-navbar-links li > a:not(.sleek-btn-book):hover,
+.sleek-navbar-links li > a:not(.sleek-btn-book).active {
     color: var(--gold);
 }
 
@@ -772,6 +783,87 @@ footer a:hover {
         display: flex;
     }
 
+    .sleek-navbar-menu {
+        position: fixed;
+        top: var(--navbar-height);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--navbar-height));
+        background: rgba(0, 31, 63, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 3rem 2rem;
+        gap: 0;
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        overflow-y: auto;
+        border-top: 1px solid rgba(191, 175, 140, 0.3);
+        z-index: 1200;
+    }
+
+    .sleek-navbar-menu.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .sleek-navbar-links {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 0;
+    }
+
+    .sleek-navbar-links li {
+        width: 100%;
+    }
+
+    .sleek-navbar-links a:not(.sleek-btn-book),
+    .sleek-navbar-links li > a:not(.sleek-btn-book) {
+        font-size: 1.25rem;
+        padding: 1.25rem 1rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(191, 175, 140, 0.2);
+    }
+
+    .sleek-navbar-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .sleek-btn-book {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .language-selector {
+        width: 100%;
+    }
+
+    .lang-toggle {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .lang-dropdown {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
     .sleek-nav-links {
         position: fixed;
         top: var(--navbar-height);
@@ -807,14 +899,6 @@ footer a:hover {
         width: 100%;
         text-align: center;
         border-bottom: 1px solid rgba(191, 175, 140, 0.2);
-    }
-
-    .sleek-btn-book {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-        width: 100%;
-        text-align: center;
-        margin-top: 1rem;
     }
 
     .sleek-language-selector {

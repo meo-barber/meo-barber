@@ -28,3 +28,279 @@
             <a href="https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa?do=invite" target="_blank" rel="noopener" class="btn btn-warning btn-lg px-5 py-3" data-i18n="team.cta.btn">Zarezerwuj Teraz</a>
         </div>
     </section>
+
+    <!-- Team Styles and Script -->
+    <style>
+        .team-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-photo-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            overflow: hidden;
+            background: linear-gradient(135deg, #001F3F 0%, #BFAF8C 100%);
+        }
+
+        .team-photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover .team-photo {
+            transform: scale(1.1);
+        }
+
+        .team-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(191, 175, 140, 0.95);
+            color: #001F3F;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-body {
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .team-name {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #001F3F;
+        }
+
+        .team-role {
+            color: #BFAF8C;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .team-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 1.5rem 0;
+            border-top: 2px solid #f0f0f0;
+            border-bottom: 2px solid #f0f0f0;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-stat {
+            text-align: center;
+        }
+
+        .team-stat-value {
+            display: block;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #BFAF8C;
+            line-height: 1;
+        }
+
+        .team-stat-label {
+            display: block;
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.25rem;
+        }
+
+        .btn-book-barber {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, #BFAF8C, #A8997A);
+            color: #001F3F;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 15px rgba(191, 175, 140, 0.3);
+        }
+
+        .btn-book-barber:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(191, 175, 140, 0.4);
+            color: #001F3F;
+        }
+
+        @media (max-width: 768px) {
+            .team-body {
+                padding: 1.5rem 1rem;
+            }
+            
+            .team-name {
+                font-size: 1.5rem;
+            }
+            
+            .team-stats {
+                padding: 1rem 0;
+            }
+        }
+    </style>
+
+    <script>
+        (function() {
+            function loadTeamMembers() {
+                // Team data from Booksy - Individual team members
+                const teamMembers = [
+                    {
+                        name: "Meo Michał",
+                        role: "Owner & Master Barber",
+                        image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/237008874cfc44fbba514b9039f6ed29.jpeg",
+                        descriptionKey: "team.meo.desc",
+                        experience: "10+",
+                        clients: "5000+",
+                        rating: "5.0",
+                        booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/644282#ba_s=dl_1",
+                        badge: "Owner"
+                    },
+                    {
+                        name: "Viktor",
+                        role: "Senior Barber",
+                        image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/c807229ced294d6c85ab8bf62cdcb4-meo-barber-viktor-30b02d9de49846e7a10a063c6dce12-booksy.jpeg",
+                        descriptionKey: "team.viktor.desc",
+                        experience: "8+",
+                        clients: "3500+",
+                        rating: "4.9",
+                        booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/730475#ba_s=dl_1",
+                        badge: "Senior"
+                    },
+                    {
+                        name: "Louis",
+                        role: "Barber",
+                        image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/f4262c90c52b43ce87c05b2b22ec5493.jpeg",
+                        descriptionKey: "team.louis.desc",
+                        experience: "5+",
+                        clients: "2000+",
+                        rating: "4.9",
+                        booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/672646#ba_s=dl_1",
+                        badge: "Pro"
+                    },
+                    {
+                        name: "Dawid",
+                        role: "Barber",
+                        image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/fc1aab3078964a798efb5ed2c977e282.jpeg",
+                        descriptionKey: "team.dawid.desc",
+                        experience: "6+",
+                        clients: "2500+",
+                        rating: "4.8",
+                        booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/674560#ba_s=dl_1",
+                        badge: "Pro"
+                    },
+                    {
+                        name: "Ling",
+                        role: "Barber",
+                        image: "https://d375139ucebi94.cloudfront.net/region2/pl/287458/resource_photos/27cbf029bf6b4d80a3cbfb50158bd4-meo-barber-ling-df364601917c4b8d85ffa2b9303700-booksy.jpeg",
+                        descriptionKey: "team.ling.desc",
+                        experience: "7+",
+                        clients: "3000+",
+                        rating: "4.9",
+                        booksy: "https://booksy.com/pl-pl/287458_meo-barber_barber-shop_3_warszawa/staffer/651408#ba_s=dl_1",
+                        badge: "Pro"
+                    }
+                ];
+
+                const teamGrid = document.getElementById('team-grid');
+                if (!teamGrid) return;
+
+                // Clear loading spinner
+                teamGrid.innerHTML = '';
+
+                // Render team members
+                teamMembers.forEach(member => {
+                    const col = document.createElement('div');
+                    col.className = 'col-lg-4 col-md-6';
+                    col.innerHTML = `
+                        <div class="team-card">
+                            <div class="team-photo-wrapper">
+                                <img src="${member.image}" class="team-photo" alt="${member.name}" loading="lazy" 
+                                     onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&size=500&background=BFAF8C&color=001F3F&font-size=0.4';">
+                                <div class="team-badge">${member.badge}</div>
+                            </div>
+                            <div class="team-body">
+                                <h3 class="team-name">${member.name}</h3>
+                                <p class="team-role">${member.role}</p>
+                                <p class="team-description" data-i18n="${member.descriptionKey}"></p>
+                                <div class="team-stats">
+                                    <div class="team-stat">
+                                        <span class="team-stat-value">${member.experience}</span>
+                                        <span class="team-stat-label" data-i18n="team.stats.years">Lata</span>
+                                    </div>
+                                    <div class="team-stat">
+                                        <span class="team-stat-value">${member.clients}</span>
+                                        <span class="team-stat-label" data-i18n="team.stats.clients">Klienci</span>
+                                    </div>
+                                    <div class="team-stat">
+                                        <span class="team-stat-value">${member.rating}</span>
+                                        <span class="team-stat-label" data-i18n="team.stats.rating">Ocena</span>
+                                    </div>
+                                </div>
+                                <a href="${member.booksy}" target="_blank" rel="noopener" class="btn-book-barber">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                    <span data-i18n="team.bookWith">Zarezerwuj z</span> <span>${member.name}</span>
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    teamGrid.appendChild(col);
+                });
+                
+                // Apply translations after rendering
+                if (window.TranslationManager) {
+                    window.TranslationManager.applyTranslations();
+                }
+            }
+
+            // Initialize on page load
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadTeamMembers);
+            } else {
+                loadTeamMembers();
+            }
+
+            // Expose globally for SPA router
+            window.teamInit = loadTeamMembers;
+        })();
+    </script>
