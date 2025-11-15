@@ -1,0 +1,98 @@
+<!-- Hero Section -->
+    <section class="bg-dark text-light py-5 mt-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-4" data-i18n="contactTitle">Kontakt i Rezerwacja</h1>
+            <p class="lead" data-i18n="contactSubtitle">Skontaktuj się z nami lub umów wizytę już dziś.</p>
+        </div>
+    </section>
+    <!-- Contact Info and Form -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <h2 class="mb-4" data-i18n="contactFormTitle">Skontaktuj Się z Nami</h2>
+                    <div class="mb-4">
+                        <h5 data-i18n="address">Adres</h5>
+                        <p>
+                            <a href="https://www.google.com/maps?q=Wschodu+Słońca+7/Lokal+U9+U10+02-226+Warszawa" target="_blank" rel="noopener" class="contact-link text-dark">
+                                Wschodu Słońca 7/Lokal U9+U10<br>02-226 Warszawa
+                            </a>
+                        </p>
+                    </div>
+                    <div class="mb-4">
+                        <h5 data-i18n="phone">Telefon</h5>
+                        <p>
+                            <a href="tel:+48735533188" class="contact-link text-dark">+48 735 533 188</a>
+                        </p>
+                    </div>
+                    <div class="mb-4">
+                        <h5 data-i18n="email">Email</h5>
+                        <p>
+                            <a href="mailto:kontakt@meobarber.pl" class="contact-link text-dark">kontakt@meobarber.pl</a>
+                        </p>
+                    </div>
+                    <div class="mb-4">
+                        <h5 data-i18n="hours">Godziny Otwarcia</h5>
+                        <p data-i18n="hoursText">Poniedziałek - Piątek: 10:00 - 20:00<br>Sobota: 9:00 - 18:00<br>Niedziela: Zamknięte</p>
+                    </div>
+                    <div>
+                        <h5 data-i18n="follow">Śledź Nas</h5>
+                        <a href="https://www.instagram.com/meo_barber/" target="_blank" class="text-warning me-3" data-i18n="instagram">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61573950532764&ref=pl_edit_xav_ig_profile_page_web" target="_blank" class="text-warning me-3" data-i18n="facebook">Facebook</a>
+                        <a href="https://booksy.com/pl-pl/dl/show-business/287458?utm_medium=c2c_referral" target="_blank" class="text-warning" data-i18n="booksy">Booksy</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="mb-4" data-i18n="bookVisit">Zarezerwuj Wizytę</h2>
+                    <form id="booking-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label" data-i18n="fullName">Imię i Nazwisko</label>
+                            <input type="text" class="form-control" id="name" name="name" required data-i18n-placeholder="fullNamePlaceholder" placeholder="Twoje imię i nazwisko">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label" data-i18n="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required data-i18n-placeholder="emailPlaceholder" placeholder="twoj@email.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label" data-i18n="phone">Telefon</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" required data-i18n-placeholder="phonePlaceholder" placeholder="+48 123 456 789">
+                        </div>
+                        <div class="mb-3">
+                            <label for="service" class="form-label" data-i18n="service">Usługa</label>
+                            <select class="form-select" id="service" name="service" required>
+                                <option value="" data-i18n="chooseService">Wybierz usługę</option>
+                                <option value="haircut-styling" data-i18n="serviceHaircutStyling">Strzyżenie męskie + stylizacja - 63 PLN</option>
+                                <option value="haircut-beard" data-i18n="serviceHaircutBeard">Strzyżenie męskie + broda - 73 PLN</option>
+                                <option value="haircut-beard-shave" data-i18n="serviceHaircutBeardShave">Strzyżenie męskie + broda + golenie - 83 PLN</option>
+                                <option value="haircut-shave" data-i18n="serviceHaircutShave">Strzyżenie męskie + golenie - 73 PLN</option>
+                                <option value="haircut" data-i18n="serviceHaircut">Strzyżenie męskie - 53 PLN</option>
+                                <option value="beard-shave" data-i18n="serviceBeardShave">Golenie brody - 33 PLN</option>
+                                <option value="face-shave" data-i18n="serviceFaceShave">Golenie twarzy - 43 PLN</option>
+                                <option value="beard-trim" data-i18n="serviceBeardTrim">Strzyżenie brody - 33 PLN</option>
+                                <option value="kids-haircut" data-i18n="serviceKidsHaircut">Strzyżenie dziecięce - 43 PLN</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="datetime" class="form-label" data-i18n="preferredDateTime">Preferowana Data i Godzina</label>
+                            <input type="text" class="form-control" id="datetime" name="datetime" required data-i18n-placeholder="preferredDateTimePlaceholder" placeholder="Wybierz datę i godzinę">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label" data-i18n="additionalNotes">Dodatkowe Uwagi</label>
+                            <textarea class="form-control" id="message" name="message" rows="3" data-i18n-placeholder="additionalNotesPlaceholder" placeholder="Dodatkowe informacje (opcjonalne)"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning btn-lg" data-i18n="sendBooking">Wyślij Prośbę o Rezerwację</button>
+                    </form>
+                    <div id="form-message" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Map Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4" data-i18n="contact.findUs">Znajdź Nas</h2>
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.8!2d21.0175!3d52.2370!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc6b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sWschodu%20S%C5%82o%C5%84ca%207%2C%20Warszawa!5e0!3m2!1spl!2spl!4v1630000000000!5m2!1spl!2spl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>

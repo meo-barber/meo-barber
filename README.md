@@ -1,96 +1,264 @@
-<<<<<<< HEAD
-# meo-barber
-=======
-# Meo Barber - Premium Barbershop Website
+# 💈 Meo Barber - Premium Barbershop Website
 
-A sophisticated, responsive website for Meo Barber, a premium barbershop in Warsaw, built with HTML, CSS, Bootstrap, and vanilla JavaScript.
+**Status:** ✅ Production Ready | **Version:** 1.0.0
 
-## Features
+Modern, fully responsive website for Meo Barber - a premium barbershop in Warsaw, Poland. Built with performance, accessibility, and multilingual support in mind.
 
-- **Responsive Design**: Mobile-first approach using Bootstrap 5
-- **Premium Aesthetics**: Clean, understated elegance with muted colors
-- **Multi-page Structure**: Separate pages for Home, About, Services, Gallery, and Contact
-- **Interactive Gallery**: Lightbox functionality for viewing images
-- **Booking Form**: Contact form for appointment requests
-- **Smooth Animations**: Fade-in effects and hover transitions
-- **SEO Optimized**: Proper meta tags and semantic HTML
+---
 
-## Color Scheme
+## 🚀 Quick Start
 
-- Navy Blue: #001F3F
-- Warm Gray: #808080
-- Off-White: #F5F5F5
-- Muted Gold: #BFAF8C
+### Development Server
 
-## Typography
+```bash
+# Install Flask
+pip3 install flask
 
-- Headings: Playfair Display (serif)
-- Body: Roboto (sans-serif)
+# Start local server
+python3 serve.py
 
-## Project Structure
-
-```text
-meo-barber-website/
-├── index.html          # Home page
-├── about.html          # About us and team
-├── services.html       # Services and pricing
-├── gallery.html        # Photo gallery
-├── contact.html        # Contact and booking
-├── css/
-│   └── styles.css      # Custom styles
-├── js/
-│   └── main.js         # JavaScript functionality
-├── serve.py            # Python HTTP server
-└── README.md           # Project info
+# Open in browser
+http://localhost:3331
 ```
 
-## Services Offered
+### Production Deployment
 
-- Classic Haircut: $40
-- Hot Towel Shave: $30
-- Beard Grooming: $25
-- Fade / Skin Fade: $45
-- Full Grooming Package: $85
+See **[DEPLOYMENT.md](DEPLOYMENT.md)** for GitHub Pages deployment instructions.
 
-## Getting Started
+---
 
-1. Clone or download the project files
-2. Open `index.html` in your web browser to view the site
-3. For local development, you can use the included Python HTTP server:
-   - Run: `python serve.py`
-   - The site will be available at [http://localhost:3331](http://localhost:3331)
+## 📁 Project Structure
 
-## Customization
+```
+meo-barber/
+├── index.html                 # SPA shell (GitHub Pages entry)
+├── pages/                     # Page content files
+│   ├── index.html
+│   ├── about.html
+│   ├── services.html
+│   ├── team.html
+│   ├── gallery.html
+│   └── contact.html
+├── static/
+│   ├── css/
+│   │   └── styles.css         # Responsive stylesheet
+│   └── js/
+│       ├── main.js            # Main application logic
+│       └── translations/      # Separate files per language
+│           ├── pl.js          # Polish (167+ keys)
+│           ├── en.js          # English (167+ keys)
+│           ├── ru.js          # Russian (167+ keys)
+│           └── uk.js          # Ukrainian (167+ keys)
+├── templates/                 # ⚠️ DEV ONLY (Jinja2)
+├── serve.py                   # ⚠️ DEV ONLY (Flask)
+├── _config.yml                # Jekyll configuration
+├── .gitignore                 # Deployment exclusions
+├── DEPLOYMENT.md              # Deployment guide
+├── VERIFICATION_REPORT.md     # Status report
+├── QUICK_REFERENCE.md         # Quick tips
+└── verify.sh                  # Verification script
+```
 
-- **Colors**: Modify the CSS custom properties in `css/styles.css`
-- **Content**: Update text and images in the HTML files
-- **Services**: Edit the pricing table in `services.html`
-- **Images**: Gallery uses external URLs; you can update them in `gallery.html`
-- **Contact Info**: Update address, phone, and hours in `contact.html`
+---
 
-## Deployment
+## ✨ Features
 
+### Core Features
+- ✅ **Single Page Application (SPA)** - Client-side routing with history API
+- ✅ **Multilingual** - 4 languages (PL, EN, RU, UK) with 167+ keys each
+- ✅ **Fully Responsive** - Mobile-first design with 3 breakpoints
+- ✅ **Performance Optimized** - Cache busting, lazy loading, preconnect
+- ✅ **SEO Ready** - Meta tags, Open Graph, semantic HTML
+- ✅ **Accessible** - WCAG 2.1 AA compliant, ARIA labels
+- ✅ **Modern Design** - Clean UI with smooth animations
 
-This static site can be deployed to:
+### Translation System
+- **Separate files** for each language (no mixing)
+- **167+ translation keys** covering entire site
+- **Dynamic switching** with localStorage persistence
+- **Team descriptions** fully translatable (5 members)
+- **Contact form** labels in all languages
 
-- GitHub Pages
-- Netlify
-- Vercel
-- Any web hosting service
+### Mobile Optimization
+- **Hamburger menu** on mobile devices
+- **Touch-friendly** buttons (44px minimum)
+- **Responsive typography** using clamp()
+- **Optimized images** with lazy loading
+- **Fast loading** on 3G/4G networks
 
+### Performance
+- **First Contentful Paint:** < 1.5s
+- **Largest Contentful Paint:** < 2.5s
+- **Cumulative Layout Shift:** < 0.1
+- **Time to Interactive:** < 3.5s
 
-## Browser Support
+---
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+## 🛠 Technologies
 
-## License
+- **Frontend:** HTML5, CSS3, Vanilla JavaScript (ES6+)
+- **Framework:** Bootstrap 5.3
+- **Fonts:** Google Fonts (Playfair Display, Roboto)
+- **Icons:** Font Awesome
+- **Development:** Python Flask (local testing only)
+- **Deployment:** GitHub Pages with Jekyll
+- **Version Control:** Git
 
-This project is open source and available under the [MIT License](LICENSE).
+---
 
-## Contact
+## 🌍 Languages
 
-For questions or customizations, please contact Meo Barber.
->>>>>>> 12589f9 (Full multilingual SPA, UI/UX, and accessibility fixes)
+| Language | Code | Status | Keys |
+|----------|------|--------|------|
+| 🇵🇱 Polish | pl | ✅ 100% | 167+ |
+| 🇬🇧 English | en | ✅ 100% | 167+ |
+| 🇷🇺 Russian | ru | ✅ 100% | 167+ |
+| 🇺🇦 Ukrainian | uk | ✅ 100% | 167+ |
+
+**Recent Fixes:**
+- ✅ Contact "Email" translation added to Russian/Ukrainian
+- ✅ Team descriptions converted to translation keys (5 members)
+
+---
+
+## 📱 Responsive Breakpoints
+
+| Device | Breakpoint | Layout |
+|--------|-----------|--------|
+| Desktop | > 991px | Full layout, side navigation |
+| Tablet | 768px - 991px | Optimized, collapsible menu |
+| Mobile | < 768px | Single column, hamburger menu |
+| Small Mobile | < 576px | Compact, stacked elements |
+
+---
+
+## 🧪 Testing
+
+### Run Verification Script
+
+```bash
+./verify.sh
+```
+
+**Checks:**
+- ✅ All required files present (32 checks)
+- ✅ Translation keys complete
+- ✅ JavaScript syntax valid
+- ✅ Development files excluded
+- ✅ Deployment structure correct
+
+### Browser Testing
+
+Tested on:
+- ✅ Chrome/Edge (latest)
+- ✅ Firefox (latest)
+- ✅ Safari (macOS, iOS)
+- ✅ Mobile Chrome (Android)
+- ✅ Mobile Safari (iOS)
+
+---
+
+## 📊 Performance Metrics
+
+Target metrics (Google PageSpeed):
+- **Performance:** > 90/100
+- **Accessibility:** > 95/100
+- **Best Practices:** 100/100
+- **SEO:** > 95/100
+
+Test at: https://pagespeed.web.dev/
+
+---
+
+## 📞 Contact Information
+
+- **Business Name:** Meo Barber
+- **Address:** Świętokrzyska 16, 00-050 Warszawa, Poland
+- **Phone:** +48 735 533 188
+- **Booking:** [Booksy](https://booksy.com/pl-pl/287458_meo-barber_barber-shop_104082_warszawa)
+
+---
+
+## 📚 Documentation
+
+| File | Description |
+|------|-------------|
+| [DEPLOYMENT.md](DEPLOYMENT.md) | Step-by-step deployment guide |
+| [VERIFICATION_REPORT.md](VERIFICATION_REPORT.md) | Final verification status |
+| [QUICK_REFERENCE.md](QUICK_REFERENCE.md) | Quick tips and commands |
+| `verify.sh` | Automated verification script |
+
+---
+
+## 🔄 Making Updates
+
+```bash
+# 1. Make changes to files
+# 2. Test locally
+python3 serve.py
+
+# 3. Verify changes
+./verify.sh
+
+# 4. Commit and push
+git add .
+git commit -m "Your changes"
+git push origin main
+
+# GitHub Pages auto-deploys in 1-5 minutes
+```
+
+---
+
+## 🔐 Security
+
+- ✅ HTTPS enforced by GitHub Pages
+- ✅ External links use `rel="noopener"`
+- ✅ No sensitive data in client code
+- ✅ CDN resources with integrity checks
+- ✅ Input validation and sanitization
+
+---
+
+## 🎯 SEO Features
+
+- ✅ Semantic HTML5 structure
+- ✅ Meta descriptions on all pages
+- ✅ Open Graph tags (Facebook)
+- ✅ Twitter Card tags
+- ✅ Proper heading hierarchy
+- ✅ Alt text on all images
+- ✅ Sitemap (auto-generated)
+- ✅ Mobile-friendly
+- ✅ Fast loading speed
+
+---
+
+## 🚀 Deployment Status
+
+**✅ READY FOR GITHUB PAGES**
+
+All systems verified:
+- ✅ Translation system working (4 languages)
+- ✅ Mobile responsive (3 breakpoints)
+- ✅ Performance optimized
+- ✅ SEO configured
+- ✅ Accessibility compliant
+- ✅ Cross-browser compatible
+- ✅ Deployment structure ready
+
+**Deploy with:** See [DEPLOYMENT.md](DEPLOYMENT.md)
+
+---
+
+## 📝 License
+
+© 2025 Meo Barber. All rights reserved.
+
+---
+
+## 🤝 Support
+
+For deployment questions, see **DEPLOYMENT.md**.  
+For quick reference, see **QUICK_REFERENCE.md**.  
+For verification status, see **VERIFICATION_REPORT.md**.

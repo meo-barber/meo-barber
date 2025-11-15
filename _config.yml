@@ -1,0 +1,23 @@
+# Meo Barber - GitHub Pages Configuration
+
+# Jekyll configuration (optional - GitHub Pages uses Jekyll by default)
+theme: null
+plugins: []
+
+# Exclude files from GitHub Pages build
+exclude:
+  - serve.py
+  - templates/
+  - verify-translations.sh
+  - TRANSLATION-SYSTEM.md
+  - .vscode/
+  - __pycache__/
+  - "*.pyc"
+  - node_modules/
+  - package*.json
+
+# Include files
+include:
+  - static/
+  - pages/
+  - index.html
